@@ -11,32 +11,28 @@ let from = ""; // get from eth_accounts call
 let userPK; // public key corresponding to the email ID, verifier
 
 const defaultEnvVariables = {
-  ENV_ARCANA_CLIENTID, 
-  ENV_ARCANA_WALLET_UI_POSITION,
-  ENV_ARCANA_THEME, 
-  ENV_ARCANA_NETWORK,
-  ENV_ARCANA_WALLET_VISIBLE,
-  ENV_ARCANA_COMPACT_MODE,
-  ENV_ARCANA_DEFAULT_CHAINID,
-  ENV_USER_LOGIN_EMAIL,
-  ENV_USER_LOGIN_VERIFIER,
-  ENV_QUERY_PUBLIC_KEY_FOR_ID,
-  ENV_QUERY_PUBLIC_KEY_FOR_ID_VERIFIER
+  ENV_ARCANA_CLIENTID: 'xar_live_d7c88d9b033d100e4200d21a5c4897b896e60063',
+  ENV_ARCANA_WALLET_UI_POSITION: 'right',
+  ENV_ARCANA_THEME: 'light', 
+  ENV_ARCANA_NETWORK: 'mainnet',
+  ENV_ARCANA_WALLET_VISIBLE: true,
+  ENV_USER_LOGIN_EMAIL: 'shaloo@newfang.io',
+  ENV_USER_LOGIN_VERIFIER: 'google',
+  ENV_QUERY_PUBLIC_KEY_FOR_ID: 'makyl@newfang.io',
+  ENV_QUERY_PUBLIC_KEY_FOR_ID_VERIFIER: 'google'
 };
 
 // Destructure environment variables with defaults
 let {
-  "xar_live_d7c88d9b033d100e4200d21a5c4897b896e60063",
-  "right",
-  "light",
-  "mainnet",
-  true,
-  false,
-  80001,
-  "shaloo@newfang.io",
-  "google",
-  "makyl@newfang.io",
-  "google"
+  ENV_ARCANA_CLIENTID,
+  ENV_ARCANA_WALLET_UI_POSITION,
+  ENV_ARCANA_THEME,
+  ENV_ARCANA_NETWORK,
+  ENV_ARCANA_WALLET_VISIBLE,
+  ENV_USER_LOGIN_EMAIL,
+  ENV_USER_LOGIN_VERIFIER,
+  ENV_QUERY_PUBLIC_KEY_FOR_ID ,
+  ENV_QUERY_PUBLIC_KEY_FOR_ID_VERIFIER 
 } = defaultEnvVariables;
 
 
@@ -54,10 +50,10 @@ const auth = new AuthProvider(ENV_ARCANA_CLIENTID, {
   alwaysVisible: ENV_ARCANA_WALLET_VISIBLE, //defaults to true which is Full UI mode
   //appMode: "1",
   connectOptions: {
-    compact: ENV_ARCANA_COMPACT_MODE
+    compact: false, 
   },
   chainConfig: {
-    chainId: ENV_ARCANA_DEFAULT_CHAINID
+    chainId: 80001
   }
 });
 
