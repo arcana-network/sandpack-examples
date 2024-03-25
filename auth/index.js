@@ -1,6 +1,8 @@
 //Use import when using package.json
 //import { AuthProvider } from "@arcana/auth";
 
+console.log("Window object", window);
+
 // Use the following when using umd file as script tag in html
 const { AuthProvider } = window.arcana.auth
 
