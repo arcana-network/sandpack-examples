@@ -10,7 +10,7 @@ let provider;
 let from = ""; // get from eth_accounts call
 let userPK; // public key corresponding to the email ID, verifier
 
-let {
+const defaultEnvVariables = {
   ENV_ARCANA_CLIENTID, 
   ENV_ARCANA_WALLET_UI_POSITION,
   ENV_ARCANA_THEME, 
@@ -20,15 +20,25 @@ let {
   ENV_ARCANA_DEFAULT_CHAINID,
   ENV_USER_LOGIN_EMAIL,
   ENV_USER_LOGIN_VERIFIER,
-  ENV_ADD_CHAIN_ID,
-  ENV_ADD_CHAIN_NAME,
-  ENV_ADD_CHAIN_SYM,
-  ENV_ADD_CHAIN_RPC_URL,
-  ENV_ADD_CHAIN_BLK_EXP_URL,
-  ENV_SWITCH_CHAIN_ID,
   ENV_QUERY_PUBLIC_KEY_FOR_ID,
   ENV_QUERY_PUBLIC_KEY_FOR_ID_VERIFIER
-} = process.env;
+};
+
+// Destructure environment variables with defaults
+let {
+  "xar_live_d7c88d9b033d100e4200d21a5c4897b896e60063",
+  "right",
+  "light",
+  "mainnet",
+  true,
+  false,
+  80001,
+  "shaloo@newfang.io",
+  "google",
+  "makyl@newfang.io",
+  "google"
+} = defaultEnvVariables;
+
 
 console.log (" ENV_ARCANA_CLIENTID ", ENV_ARCANA_CLIENTID);
 if (process.env.NODE_ENV === 'development') {
