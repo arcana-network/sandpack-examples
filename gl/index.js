@@ -1,20 +1,29 @@
-//import { scw } from "@arcana/scw@0.0.22";
-//import { scw } from "https\://unpkg.com/@arcana/scw@0.0.22/dist/standalone/scw.umd.js";
-//import { myscw } from "@arcana/scw@0.0.22";
-
 import { myerc20abi } from "./myerc20.js";
 
 //const clientId = "xar_dev_56c6d7f95838926fc7a609e1003bcf31a0b17d51";
 const clientId = "xar_dev_1ce3de98ebac47e4196a1380b61422dcf63a9c7b";
 
-await window.ethereum.enable();
-const provider = new ethers.providers.Web3Provider(window.ethereum);
-let signer = await provider.getSigner();
-console.log("EOA: ", await signer.getAddress());
+let provider;
+let signer;
 
-//use import statement - not working
-//const appSCW = new myscw.SCW();
-//const appSCW = arcana.scw.SCW();
+(async () => {
+  try {
+    await window.ethereum.enable();
+  } catch (e) {
+      console.log("Exception when awaiting window.ethereum.enable:",e);
+  }
+})();
+
+(async () => {
+  try {
+
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    signer = await provider.getSigner();
+    console.log("EOA: ", await signer.getAddress());
+  } catch (e) {
+      console.log("Exception: ",e);
+  }
+})();
 
 //use scw.umd.js file to instantiate SCW object
 const appSCW = new arcana.scw.SCW();

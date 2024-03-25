@@ -1,7 +1,4 @@
-//Use import when using package.json
-//import { AuthProvider } from "@arcana/auth";
-
-console.log("Window object", window);
+import "./styles.css"
 
 // Use the following when using umd file as script tag in html
 const { AuthProvider } = window.arcana.auth
@@ -12,8 +9,6 @@ let userPK; // public key corresponding to the email ID, verifier
 
 const defaultEnvVariables = {
   ENV_ARCANA_CLIENTID: 'xar_live_d7c88d9b033d100e4200d21a5c4897b896e60063',
-  ENV_ARCANA_WALLET_UI_POSITION: 'right',
-  ENV_ARCANA_THEME: 'light', 
   ENV_ARCANA_NETWORK: 'mainnet',
   ENV_ARCANA_WALLET_VISIBLE: true,
   ENV_USER_LOGIN_EMAIL: 'shaloo@newfang.io',
@@ -25,8 +20,6 @@ const defaultEnvVariables = {
 // Destructure environment variables with defaults
 let {
   ENV_ARCANA_CLIENTID,
-  ENV_ARCANA_WALLET_UI_POSITION,
-  ENV_ARCANA_THEME,
   ENV_ARCANA_NETWORK,
   ENV_ARCANA_WALLET_VISIBLE,
   ENV_USER_LOGIN_EMAIL,
@@ -45,8 +38,8 @@ if (process.env.NODE_ENV === 'development') {
 
 const auth = new AuthProvider(ENV_ARCANA_CLIENTID, {
   network: ENV_ARCANA_NETWORK,
-  position: ENV_ARCANA_WALLET_UI_POSITION,
-  theme: ENV_ARCANA_THEME, //defaults to dark
+  position: 'left',
+  theme: 'light', //defaults to dark
   alwaysVisible: ENV_ARCANA_WALLET_VISIBLE, //defaults to true which is Full UI mode
   //appMode: "1",
   connectOptions: {
@@ -58,6 +51,7 @@ const auth = new AuthProvider(ENV_ARCANA_CLIENTID, {
 });
 
 provider = auth.provider;
+document.querySelector("#event").innerHTML = "----";
 setHooks();
 
 function setHooks() {
@@ -112,16 +106,6 @@ async function getLogins() {
     document.querySelector("#result").innerHTML =
       "Available Auth Options: \n" + authOptions;
     console.log({ logins });
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-async function getAppId() {
-  try {
-    const appId = await auth.appId;
-    console.log("App id:", appId);
-    document.querySelector("#result").innerHTML = "AppId: " + appId;
   } catch (e) {
     console.log(e);
   }
@@ -336,34 +320,11 @@ async function showWallet() {
 
 document.querySelector("#Btn-InitAuth").addEventListener("click", initAuth);
 document.querySelector("#Btn-GetLogins").addEventListener("click", getLogins);
-document.querySelector("#Btn-GetAppId").addEventListener("click", getAppId);
-document.querySelector("#Btn-IsLoggedIn").addEventListener("click", isLoggedIn);
 document
 document.querySelector("#Btn-Connect").addEventListener("click", connect);
-document
-  .querySelector("#Btn-Login-with-Social")
-  .addEventListener("click", loginWithSocial);
-document
-  .querySelector("#Btn-Login-with-Link")
-  .addEventListener("click", loginWithLink);
-document
-  .querySelector("#Btn-Login-with-OTP")
-  .addEventListener("click", loginWithOTP);
 document
   .querySelector("#Btn-GetAccounts")
   .addEventListener("click", getAccounts);
 document.querySelector("#Btn-GetUser").addEventListener("click", getUser);
-document
-  .querySelector("#Btn-GetPublicKey")
-  .addEventListener("click", getPublicKey);
-document
-  .querySelector("#Btn-GetEncryptPublicKey")
-  .addEventListener("click", getEncryptPK);
-document
-  .querySelector("#Btn-GetUserPublicKey")
-  .addEventListener("click", getUserPK);
-document
-  .querySelector("#Btn-ReqAccounts")
-  .addEventListener("click", requestAccounts);
 document.querySelector("#Btn-ShowWallet").addEventListener("click", showWallet);
 document.querySelector("#Btn-Logout").addEventListener("click", logout);
