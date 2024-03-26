@@ -1,3 +1,4 @@
+import "./styles.css";
 import { myerc20abi } from "./myerc20.js";
 
 //const clientId = "xar_dev_56c6d7f95838926fc7a609e1003bcf31a0b17d51";

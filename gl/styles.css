@@ -2,12 +2,32 @@
 
 * {
   font-family: "Sora", sans-serif;
-  margin: 0;
+  margin: 0.5rem;
 }
 
 body {
-  font-family: sans-serif;
-  padding: 2.5rem;
+  padding: 0.5rem;
+}
+
+.dive-in {
+    padding: 1rem;
+    color: #000080;
+    text-align: center;
+}
+
+.honk-title-hello {
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+}
+
+.title-hello {
+  font-family: "Inter", system-ui;
+  font-weight: 600;
 }
 
 h1 {
@@ -21,22 +41,51 @@ h2 {
 }
 
 .result_style {
-  padding: 3rem;
+  padding: 1rem;
+  background: lightcyan;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
+
+.event_style {
+  padding: 1rem;
+  background: #feffc0;
+  border-radius: 5px;
+  margin: 0.5rem;
+  width: 80%;
 }
 
 .title_style {
-  padding: 2rem;
+  padding: 1rem;
   background-color: #eaeaea;
+  margin: 0.5rem;
 }
 
 .admonition {
   border: 1px solid purple;
   border-radius: 5px;
-  padding: 3rem;
+  padding: 1rem;
+}
+
+.title_category_container {
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+.title_container {
+  display: block;
+  padding: 0.25rem;
+}
+
+.functions_category_container {
+  display: flex;
 }
 
 .function_container {
   display: flex;
+  padding: 0.5rem;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .functions {
@@ -146,16 +195,14 @@ main {
   margin-right: 5px;
 }
 
-.big-button {
+.button {
+  background-color: #eaeaea;
   display: block;
   width: 300px;
   padding: 0.75em 1.5em;
   font-size: 0.9rem;
-  /* margin: 0 auto; */
-  /* margin-left: 8px; */
 }
 
 .view-window {
   overflow: hidden;
 }
-
