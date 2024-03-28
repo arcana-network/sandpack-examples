@@ -10,6 +10,7 @@ let signer;
 (async () => {
   try {
     await window.ethereum.enable();
+    console.log("after window.ethereum.enable");
   } catch (e) {
       console.log("Exception when awaiting window.ethereum.enable:",e);
   }
@@ -17,8 +18,8 @@ let signer;
 
 (async () => {
   try {
-
     provider = new ethers.providers.Web3Provider(window.ethereum);
+    console.log("after Web3Provider instantiation");
     signer = await provider.getSigner();
     console.log("EOA: ", await signer.getAddress());
   } catch (e) {
