@@ -15,7 +15,7 @@
     "eslint": "^7.2.0"
   },
   "dependencies": {
-    "@arcana/scw": "^0.0.30"
+    "@arcana/scw": "^0.0.35"
   }
 }
 

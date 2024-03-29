@@ -1,4 +1,3 @@
-import "./styles.css";
 import { myerc20abi } from "./myerc20.js";
 
 //const clientId = "xar_dev_56c6d7f95838926fc7a609e1003bcf31a0b17d51";
@@ -10,15 +9,15 @@ let signer;
 (async () => {
   try {
     await window.ethereum.enable();
-    console.log("after window.ethereum.enable");
     provider = new ethers.providers.Web3Provider(window.ethereum);
-    console.log("after Web3Provider instantiation");
     signer = await provider.getSigner();
     console.log("EOA: ", await signer.getAddress());
   } catch (e) {
       console.log("Exception: ",e);
   }
 })();
+
+console.log("Creating scw object...");
 
 //use scw.umd.js file to instantiate SCW object
 const appSCW = new arcana.scw.SCW();

@@ -3,7 +3,7 @@
   <head>
     <title>Parcel Sandbox</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./styles.css">
+    <linki rel="stylesheet" href="./styles.css"></link>
   </head>
 
   <body>
@@ -39,10 +39,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@arcana/scw@0.0.30/dist/standalone/scw.umd.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/@arcana/scw@0.0.35/dist/standalone.mjs"></script>
+    <script type="module">
+        import { SCW } from 'https://unpkg.com/@arcana/scw@0.0.35/dist/standalone.mjs';
+        window.SCW = SCW;
+        window.arcana = {scw: {SCW}};
+    </script>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
