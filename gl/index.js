@@ -1,3 +1,4 @@
+import "./styles.css"
 import { myerc20abi } from "./myerc20.js";
 
 //const clientId = "xar_dev_56c6d7f95838926fc7a609e1003bcf31a0b17d51";
@@ -21,6 +22,9 @@ console.log("Creating scw object...");
 
 //use scw.umd.js file to instantiate SCW object
 const appSCW = new arcana.scw.SCW();
+
+// use scw v0.0.35
+//const appSCW = window.arcana.scw.SCW();
 
 async function initSCW() {
   console.log("Intantiating SCW... ");
