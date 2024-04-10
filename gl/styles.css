@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Sora:wght@400;600&display=block");
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700");
 
 * {
-  font-family: "Sora", sans-serif;
+  font-family: "Onest", system-ui;
   margin: 0.5rem;
 }
 
@@ -16,13 +16,27 @@ body {
 }
 
 .title-hello {
-  font-family: "Sora", system-ui;
+  font-family: "Onest", system-ui;
   font-weight: 600;
+  font-size: 1.25rem;
+
 }
 
 h1 {
   text-align: center;
   margin: 10px 0;
+  font-size: 1.0rem;
+}
+
+h2 {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 0.75rem;
+}
+
+h1,
+h2 {
+  font-family: "Onest", system-ui;
 }
 
 .result_style {
@@ -30,6 +44,7 @@ h1 {
   background: lightcyan;
   border-radius: 5px;
   word-wrap: break-word;
+  font-size: 0.75rem;
 }
 
 .event_style {
@@ -44,12 +59,14 @@ h1 {
   padding: 1rem;
   background-color: #eaeaea;
   margin: 0.5rem;
+  font-size: 1.25rem;
 }
 
 .admonition {
   border: 1px solid purple;
   border-radius: 5px;
   padding: 1rem;
+  font-size: 0.75rem;
 }
 
 .title_category_container {
@@ -112,8 +129,8 @@ input {
 
 .error {
   text-transform: uppercase;
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 0.75rem;
+  font-weight: italics;
   color: white;
   background-color: red;
   padding: 8px 8px;
@@ -127,18 +144,18 @@ input {
   background-color: black;
   padding: 15px 15px;
   margin-bottom: 7px;
-  font-size: 1.25rem;
+  font-size: 1.0;
   /* margin: 5px auto; */
 }
 
 .sub-heading {
   text-transform: uppercase;
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   font-weight: bold;
 }
 
 .sub-value {
-  font-size: 1.125rem;
+  font-size: 0.75rem;
   background-color: lightcyan;
   padding: 2px 2px;
 }
