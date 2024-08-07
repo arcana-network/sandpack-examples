@@ -1,11 +1,12 @@
-import "./styles.css"
+/*
 import {
   BrowserProvider,
   ethers,
 } from "ethers";
-//import {SCW} from "@arcana/scw";
-//import * as scw from "https://unpkg.com/browse/@arcana/scw@0.0.43/dist/standalone.mjs"
+
 import { SCW } from "@arcana/scw";
+*/
+import "./styles.css"
 import { myerc20abi } from "./myerc20.js";
 
 const clientId = "xar_dev_1ce3de98ebac47e4196a1380b61422dcf63a9c7b";
