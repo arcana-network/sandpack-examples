@@ -1,11 +1,11 @@
-///*
+/*
 import {
   BrowserProvider,
   ethers,
 } from "ethers";
 
 import { SCW } from "@arcana/scw";
-//*/
+*/
 import "./styles.css"
 import { myerc20abi } from "./myerc20.js";
 
