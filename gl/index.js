@@ -1,6 +1,6 @@
 import "./styles.css"
 import { myerc20abi } from "./myerc20.js";
-import { SCW } from "@arcana/scw";
+//import { SCW } from "https://www.npmjs.com/package/@arcana/scw";
 
 //const clientId = "xar_dev_56c6d7f95838926fc7a609e1003bcf31a0b17d51";
 const clientId = "xar_dev_1ce3de98ebac47e4196a1380b61422dcf63a9c7b";
