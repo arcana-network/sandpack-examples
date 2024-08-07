@@ -1,17 +1,24 @@
 import "./styles.css"
+import {
+  BrowserProvider,
+  ethers,
+} from "ethers";
+//import {SCW} from "@arcana/scw";
+//import * as scw from "https://unpkg.com/browse/@arcana/scw@0.0.43/dist/standalone.mjs"
+import { SCW } from "@arcana/scw";
 import { myerc20abi } from "./myerc20.js";
-//import { SCW } from "https://www.npmjs.com/package/@arcana/scw";
 
-//const clientId = "xar_dev_56c6d7f95838926fc7a609e1003bcf31a0b17d51";
 const clientId = "xar_dev_1ce3de98ebac47e4196a1380b61422dcf63a9c7b";
 
+//let provider1, 
 let provider;
 let signer;
 
 (async () => {
   try {
     await window.ethereum.enable();
-    provider = new ethers.providers.Web3Provider(window.ethereum);
+    //provider1 = new ethers.providers.Web3Provider(window.ethereum);
+    provider = new BrowserProvider(window.ethereum);
     signer = await provider.getSigner();
     console.log("EOA: ", await signer.getAddress());
   } catch (e) {
@@ -24,7 +31,7 @@ console.log("Creating scw object...");
 //use scw.umd.js v0.0.30 file to instantiate SCW object
 //const appSCW = new arcana.scw.SCW();
 
-// use scw v0.0.39
+// use scw v0.0.43
 const appSCW = new SCW();
 
 async function initSCW() {
@@ -32,7 +39,7 @@ async function initSCW() {
   document.querySelector("#result").innerHTML =
     "Initializing SCW. Please wait...";
   try {
-    await appSCW.init(clientId, signer, undefined);
+    await appSCW.init(clientId, provider, undefined, 0);
     console.log("Init SCW complete!");
     document.querySelector("#result").innerHTML = "SCW initialized.";
   } catch (e) {

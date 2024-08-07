@@ -1,7 +1,8 @@
-import "./styles.css"
+import "./styles.css";
 
 // Use the following when using umd file as script tag in html
-const { AuthProvider } = window.arcana.auth
+//const { AuthProvider } = window.arcana.auth
+import { AuthProvider } from "@arcana/auth";
 
 let provider;
 let from = ""; // get from eth_accounts call

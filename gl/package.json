@@ -2,20 +2,33 @@
   "name": "html-css-gasless-metamask-only",
   "version": "0.0.43",
   "description": "A template for HTML and CSS based app integrating with Arcana Gasless SDK using only MetaMask wallet.",
-  "main": "index.html",
+  "main": "index.js",
+  "source": "index.html",
   "scripts": {
-    "start": "serve"
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
   },
   "keywords": ["html", "css", "gasless", "arcana"],
   "author": "Shaloo Shalini",
   "license": "MIT",
   "devDependencies": {
-    "serve": "^11.2.0",
+    "@babel/core": "^7.2.0",
+    "buffer": "^5.5.0||^6.0.0",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.1.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "typescript": "^5.5.4",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.2.0"
   },
   "dependencies": {
-    "@arcana/scw": "0.0.43"
+    "@arcana/scw": "0.0.43",
+    "ethers": "6.13.0",
+    "dotenv": "^16.3.1",
+    "parcel": "^2.9.3"
   }
 }
 
