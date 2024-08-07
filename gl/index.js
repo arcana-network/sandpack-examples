@@ -1,11 +1,11 @@
-/*
+///*
 import {
   BrowserProvider,
   ethers,
 } from "ethers";
 
 import { SCW } from "@arcana/scw";
-*/
+//*/
 import "./styles.css"
 import { myerc20abi } from "./myerc20.js";
 
@@ -36,7 +36,7 @@ console.log("Creating scw object...");
 const appSCW = new SCW();
 
 async function initSCW() {
-  console.log("Intantiating SCW... ");
+  console.log("Instantiating SCW... ");
   document.querySelector("#result").innerHTML =
     "Initializing SCW. Please wait...";
   try {
