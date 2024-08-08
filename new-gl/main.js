@@ -34,9 +34,9 @@ const { SCW } = await import(
   "https://unpkg.com/@arcana/scw@0.0.43/dist/standalone.mjs"
 );
 
-const clientId = "xar_dev_1ce3de98ebac47e4196a1380b61422dcf63a9c7b";
+//const clientId = "xar_dev_1ce3de98ebac47e4196a1380b61422dcf63a9c7b";
+const clientId = "xar_dev_1e3ee6a5cecc593d0dac2e1893dbe7534a174ac4";
 
-//let provider1, 
 let provider;
 let signer;
 let addr;
