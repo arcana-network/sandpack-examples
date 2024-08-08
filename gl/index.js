@@ -1,13 +1,19 @@
-/*
+
+
+
+import "./styles.css"
+import { myerc20abi } from "./myerc20.js";
 import {
   BrowserProvider,
   ethers,
 } from "ethers";
 
 import { SCW } from "@arcana/scw";
+//const SCW = await import("https://unpkg.com/@arcana/scw@0.0.43/dist/standalone.mjs");
+/*const { SCW } = await import(
+  "https://unpkg.com/@arcana/scw@0.0.43/dist/standalone.mjs"
+);
 */
-import "./styles.css"
-import { myerc20abi } from "./myerc20.js";
 
 const clientId = "xar_dev_1ce3de98ebac47e4196a1380b61422dcf63a9c7b";
 
@@ -18,7 +24,7 @@ let signer;
 (async () => {
   try {
     await window.ethereum.enable();
-    //provider1 = new ethers.providers.Web3Provider(window.ethereum);
+    //provider = new ethers.providers.Web3Provider(window.ethereum);
     provider = new BrowserProvider(window.ethereum);
     signer = await provider.getSigner();
     console.log("EOA: ", await signer.getAddress());
@@ -41,6 +47,7 @@ async function initSCW() {
     "Initializing SCW. Please wait...";
   try {
     await appSCW.init(clientId, provider, undefined, 0);
+    //await appSCW.init(clientId, signer, undefined);
     console.log("Init SCW complete!");
     document.querySelector("#result").innerHTML = "SCW initialized.";
   } catch (e) {
