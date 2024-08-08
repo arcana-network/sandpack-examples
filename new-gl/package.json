@@ -16,7 +16,6 @@
     "serve": "^11.2.0"
   },
   "dependencies": {
-    "@arcana/scw": "0.0.43",
-    "ethers": "6.13.0"
+    "@arcana/scw": "0.0.43"
   }
 }
