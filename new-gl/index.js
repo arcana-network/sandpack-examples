@@ -1,35 +1,12 @@
 
-/*
-const { SCW } = await import(
-  "https://unpkg.com/@arcana/scw@0.0.43/dist/standalone.mjs"
-);
-
-console.log({ SCW });
-
-var scwApp = new SCW();
-
-console.log("Initializing...")
-var scwi = await scwApp.init(
-  "xar_dev_1ce3de98ebac47e4196a1380b61422dcf63a9c7b",
-  window.ethereum
-);
-console.log("Initialized SCW.")
-*/
-
-/*
-import {
-  BrowserProvider,
-  ethers,
-} from "ethers";
-*/
-
 import { myerc20abi } from "./myerc20.js";
 
+/*
 const { ethers, BrowserProvider } = await import(
   "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.0/ethers.umd.min.js"
 );
-//import { SCW } from "@arcana/scw";
-//const SCW = await import("https://unpkg.com/@arcana/scw@0.0.43/dist/standalone.mjs");
+*/
+
 const { SCW } = await import(
   "https://unpkg.com/@arcana/scw@0.0.43/dist/standalone.mjs"
 );
@@ -43,30 +20,18 @@ let addr;
 
 (async () => {
   try {
-    //await window.ethereum.enable();
-    //provider = new ethers.providers.Web3Provider(window.ethereum);
     addr = await window.ethereum.request({
       "method": "eth_requestAccounts",
       "params": []
     });
     console.log("MetaMask Addr:", addr[0]);
-    /*
-    provider = ethers.BrowserProvider(window.ethereum);
-    console.log("BrowserProvider: ", provider)
-    signer = await provider.hasSigner();
-    console.log("Signer: ", signer);
-    //signer = await provider.getSigner();
-    console.log("EOA: ", await signer.getAddress());
-    */
+
   } catch (e) {
       console.log("Exception: ",e);
   }
 })();
 
 console.log("Creating scw object...");
-
-//use scw.umd.js v0.0.30 file to instantiate SCW object
-//const appSCW = new arcana.scw.SCW();
 
 // use scw v0.0.43
 const appSCW = new SCW();
@@ -77,8 +42,6 @@ async function initSCW() {
     "Initializing SCW. Please wait...";
   try {
     await appSCW.init(clientId, window.ethereum, undefined, 0);
-    //await appSCW.init(clientId, provider, undefined, 0);
-    //await appSCW.init(clientId, signer, undefined);
     console.log("Init SCW complete!");
     document.querySelector("#result").innerHTML = "SCW initialized.";
   } catch (e) {
