@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap');
+    </style>
+    <link rel="stylesheet" href="./styles.css"></link>
+  </head>
+
+  <body>
+    <div id="app">
+      <h1 class="title-hello"> Gasless: Hello World! 🌐 </h1>
+      <div>
+        <div class="dive-in">
+          <p> Ready to dive in Arcana Gasless with MetaMask? </p>
+          <div class="admonition">
+            <strong>Use model:</strong>
+            <br /><br />Log into MetaMask wallet first and then click init,
+            getSCWAddress.
+          </div>
+        </div>
+      </div>
+
+      <div class="function_category_container">
+        <div class="function_container">
+          <button id="Btn-Init-Auth">Init</button>
+        </div>
+        <div class="function_container">
+          <button id="Btn-Get-SCW-Address">Get SCW Address</button>
+          <button id="Btn-Do-Gasless-Tx">Do Gasless Tx</button>
+        </div>
+      </div>
+      <div class="result_style" id="result-container">
+        <strong>Result: </strong><span id="result"></span>
+      </div>
+    </div>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.0/ethers.umd.min.js" 
+    integrity="sha512-yhbfKyAjj1d7DG9IdorCr13o6VVoaRDdYww3u9oRDbOiMw7UkhI607wB54fXUxA9s22Qr8ltpiv18rSe7QifEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="https://unpkg.com/@arcana/scw@0.0.43/dist/standalone.mjs"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
