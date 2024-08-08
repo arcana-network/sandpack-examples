@@ -5,19 +5,16 @@
   "main": "index.js",
   "source": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "start": "serve"
   },
   "keywords": ["html", "css", "gasless", "arcana"],
   "author": "Shaloo Shalini",
   "license": "MIT",
   "devDependencies": {
-    "dotenv": "^16.3.1",
-    "parcel": "^2.9.3"
+    "serve": "^11.2.0"
   },
   "dependencies": {
-    "@arcana/scw": "0.0.43",
-    "ethers": "6.13.0"
+    "@arcana/scw": "0.0.43"
   }
 }
 

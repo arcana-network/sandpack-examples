@@ -9,12 +9,12 @@ const { SCW } = await import(
 const clientId = "xar_dev_1e3ee6a5cecc593d0dac2e1893dbe7534a174ac4";
 
 let provider;
-let signer;
 let addr;
 
 (async () => {
   try {
-    addr = await window.ethereum.request({
+    provider = window.ethereum;
+    addr = await provider.request({
       "method": "eth_requestAccounts",
       "params": []
     });
@@ -35,7 +35,7 @@ async function initSCW() {
   document.querySelector("#result").innerHTML =
     "Initializing SCW. Please wait...";
   try {
-    await appSCW.init(clientId, window.ethereum, undefined, 0);
+    await appSCW.init(clientId, provider, undefined, 0);
     console.log("Init SCW complete!");
     document.querySelector("#result").innerHTML = "SCW initialized.";
   } catch (e) {
