@@ -11,9 +11,10 @@
   "author": "Shaloo Shalini",
   "license": "MIT",
   "devDependencies": {
-    "serve": "^11.2.0"
+    "serve": "^14.2.3"
   },
   "dependencies": {
+    "ethers": "6.13.2",
     "@arcana/scw": "0.0.43"
   }
 }
