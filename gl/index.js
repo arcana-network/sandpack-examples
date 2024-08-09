@@ -1,4 +1,4 @@
-//local file in sandpack
+import "./styles.css";
 
 // Use the following when using js file as script tag in html
 // Following line is how auth SDK works with script in html but SCW does not
