@@ -1,0 +1,38 @@
+{
+  "name": "latest-sample-ca-sdk-simple-html-css-js",
+  "version": "1.0.11",
+  "description": "Sample CA SDK c0.014-beta.4 Integration for vanilla html/js/css app",
+  "main": "index.js",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@arcana/ca-sdk": "file:../../ca-sdk/dist/ca.js:",
+    "dotenv": "^16.3.1",
+    "parcel": "^2.9.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "buffer": "^5.5.0||^6.0.0",
+    "crypto-browserify": "^3.12.0",
+    "events": "^3.1.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "string_decoder": "^1.3.0",
+    "typescript": "4.4.4",
+    "vm-browserify": "^1.1.2"
+  },
+  "resolutions": {
+    "@babel/preset-env": "^7.13.8"
+  },
+  "keywords": [],
+  "@parcel/transformer-js": {
+    "inlineEnvironment": [
+      "ENV_*"
+    ]
+  }
+}
