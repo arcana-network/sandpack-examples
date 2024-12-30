@@ -8,7 +8,7 @@ let ca: CA | null = null;
 
 let provider;
 //Assumption: window.ethereum has MetaMask wallet enabled in the browser
-const ca = new CA(window.ethereum, {
+ca = new CA(window.ethereum, {
     network: "testnet",
 });
 
