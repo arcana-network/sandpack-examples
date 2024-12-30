@@ -29,7 +29,7 @@ const initCA = () => {
   document.querySelector("#result").innerHTML =
     "CA Object created using MetaMask.";
 
-  console.log("Initializing CA SDK");
+  console.log("CA SDK init call....");
   async () => {
     try {
       await ca.init();
