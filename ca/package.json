@@ -9,7 +9,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "@arcana/ca-sdk": "file:../../ca-sdk/dist/ca.js:",
+    "@arcana/ca-sdk": "0.0.1",
     "dotenv": "^16.3.1",
     "parcel": "^2.9.3"
   },
