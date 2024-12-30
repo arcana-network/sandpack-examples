@@ -4,19 +4,38 @@ import "./styles.css";
 // const { CA } = window.arcana.ca
 import { CA } from "@arcana/ca-sdk";
 
-let ca: CA | null = null;
+let ca;
 
-let provider;
+let provider = window.ethereum;
+
 //Assumption: window.ethereum has MetaMask wallet enabled in the browser
-ca = new CA(window.ethereum, {
-    network: "testnet",
-});
+
+if (!provider){
+  console.log("Initialize MetaMask before running the playground");
+  return;
+}
+
 
 async function initCA() {
   console.log("Initializing CA SDK");
+  ca = new CA(window.ethereum, {
+      network: "testnet",
+  });
+ 
+  if (!ca){
+    console.log("Failed to create CA object!!!");
+    return;
+  }
+
+  document.querySelector("#result").innerHTML =
+    "CA Object created using MetaMask.";
+
+  console.log("Initializing CA SDK");
   try {
     await ca.init();
-    console.log(CA SDK initialized!));
+    console.log("CA SDK initialized!");
+    document.querySelector("#result").innerHTML =
+      "CA SDK Initialized for MetaMask. Add code for allowance, transfers, transactions via the SDK";
   } catch (e) {
       console.log({ e });
   }
